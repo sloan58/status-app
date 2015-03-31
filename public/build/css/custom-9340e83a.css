@@ -1,0 +1,66 @@
+/*
+ * Hero Unit
+ */
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5 !important;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #5db3b7;
+  margin-bottom: 2em; }
+
+.thing-form {
+  margin: 20px 0; }
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px; }
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px; }
+
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #E5E5E5; }
+
+.todo-list, .table-top-margin, .project-delete {
+  margin-top: 20px; }
+
+.project-name {
+  text-decoration: none; }
+
+/*Individual Projects*/
+.project-media {
+  border: 1px solid #e3e3e3;
+  background: white;
+  padding: 1em;
+  margin-bottom: 2em; }
+
+.todo-form {
+  margin: 20px 0; }
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none; }
+
+.lato-headers {
+  font-size: 2em;
+  font-weight: 700;
+  font-family: 'Lato'; }
+
+/* Navbar */
+.navbar {
+  margin-bottom: 0px; }
+
+/* Footer */
+.footer-top-margin {
+  margin-top: 1.5em; }
+
+
+/*# sourceMappingURL=custom.css.map */
