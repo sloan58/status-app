@@ -91,7 +91,18 @@
         </div>
     @else
     <div class="row table-top-margin">
-        <div class="col-md-6 col-md-offset-3 lato-headers text-center">
+
+        <div class="col-md-2 text-center">
+            @if(Auth::user()->hasRole('admin'))
+            <div class="form-group">
+                {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('projects.destroy', $project->id))) !!}
+                {!! Form::submit('Delete Project', array('class' => 'btn btn-danger')) !!}
+                {!! Form::close() !!}
+            </div>
+            @endif
+        </div>
+    <div class="row table-top-margin">
+        <div class="col-md-6 col-md-offset-1 lato-headers text-center">
             <h2>No Status Updates.....</h2>
             <h2><a href="{!! route('projects.statuses.create', $project->id) !!}">Add One!</a></h2>
         </div>

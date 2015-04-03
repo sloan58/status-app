@@ -6,7 +6,7 @@
 
 
         @if(\Auth::user())
-            {!! Form::open(['class' => 'form']) !!}
+            {!! Form::open(['url' => 'projects', 'class' => 'form']) !!}
 
             <div class="col-md-4 col-md-offset-4 todo-list">
                 <p class="input-group">
@@ -67,9 +67,18 @@
 
 
         @else
-        <div class="col-md-4 col-md-offset-4">
-            <h2 class="lato-headers text-center">No Projects..... Add One!</h2>
-        </div>
+        @if (Request::is('projects/mine'))
+            <div class="col-md-8 col-md-offset-2">
+                <h2 class="lato-headers text-center">There are no projects assigned to you.</h2>
+            </div>
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <h2><a href="{!! route('projects.index') !!}">View All Projects</a></h2>
+            </div>
+        @else
+            <div class="col-md-4 col-md-offset-4">
+                <h2 class="lato-headers text-center">No Projects..... Add One!</h2>
+            </div>
+        @endif
         @endif
     </div>
 </div>

@@ -53,7 +53,7 @@ Route::get('/statuses/all', [
  */
 Route::get('/', [
     'as' => 'home',
-    'uses' =>'ProjectsController@mine'
+    'uses' =>'ProjectsController@index'
 ]);
 
 Route::pattern('id', '[0-9]+');

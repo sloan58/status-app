@@ -12,7 +12,8 @@ class DatabaseSeeder extends Seeder {
         'users',
         'projects',
         'project_user',
-        'statuses'
+        'statuses',
+        'language',
     ];
 
     /**

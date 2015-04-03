@@ -18,23 +18,24 @@ class RolesTableSeeder extends Seeder {
         $adminRole->is_admin = 1;
         $adminRole->save();
 
-        $commentRole = new Role;
-        $commentRole->name = 'comment';
-        $commentRole->display_name = 'comment';
-        $commentRole->description = 'description';
-        $commentRole->is_admin = 0;
-        $commentRole->save();
+        $reportingRole = new Role;
+        $reportingRole->name = 'reporting';
+        $reportingRole->display_name = 'reporting';
+        $reportingRole->description = 'Can Generate Reports';
+        $reportingRole->is_admin = 1;
+        $reportingRole->save();
 
         $user = User::where('email','=','admin@admin.com')->first();
         $assignedrole = new AssignedRoles;
         $assignedrole->user_id = $user->id;
         $assignedrole->role_id = $adminRole->id;
+        $assignedrole->role_id = $reportingRole->id;
         $assignedrole->save();
 
         $user = User::where('email','=','user@user.com')->first();
         $assignedrole = new AssignedRoles;
         $assignedrole->user_id = $user->id;
-        $assignedrole->role_id = $commentRole->id;
+        $assignedrole->role_id = $reportingRole->id;
         $assignedrole->save();
     }
 
