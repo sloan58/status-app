@@ -44,4 +44,21 @@ class Project extends Model {
         return $this->belongsTo('App\User', 'last_updated_by');
     }
 
+    /*
+     * A Project has many subscribers
+     */
+    public function subscribers()
+    {
+        return $this->belongsToMany('App\User');
+    }
+
+    public function alreadySubscribed($userId)
+    {
+        return ! is_null(
+            $this->subscribers()
+                ->where('user_id', $userId)
+                ->first()
+        );
+    }
+
 }

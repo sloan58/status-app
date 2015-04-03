@@ -22,7 +22,9 @@ class DatabaseSeeder extends Seeder {
         'UsersTableSeeder',
         'ProjectTableSeeder',
         'ProjectUserTableSeeder',
-        'StatusTableSeeder'
+        'StatusTableSeeder',
+        'LanguagesTableSeeder',
+
     ];
 
     /**

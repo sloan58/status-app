@@ -14,11 +14,19 @@
 
     <div class="row">
         <div class="col-md-2 col-md-offset-4">
+            @if (URL::previous('projects/mine'))
+                <a href="{!! route('projects.mine') !!}">
+                    <button class="btn btn-default center-block">
+                        Back to Project List
+                    </button>
+                </a>
+            @else
             <a href="{!! route('projects.index') !!}">
-            <button class="btn btn-default center-block">
-                Back to Project List
-            </button>
+                <button class="btn btn-default center-block">
+                    Back to Project List
+                </button>
             </a>
+            @endif
         </div>
         <div class="col-md-2">
         <a href="{!! route('projects.statuses.create', $project->id) !!}">
@@ -34,7 +42,33 @@
     <div class="row">
     @if($project->status->count())
         <div class="row table-top-margin">
-            <div class="col-md-10 col-md-offset-1">
+
+        <div class="col-md-2 text-center">
+
+            @if(!$project->alreadySubscribed(\Auth::user()->id))
+            <div class="form-group">
+                {!! Form::open(array('class' => 'form-inline', 'route' => array('subscribe', $project->id))) !!}
+                {!! Form::submit('Subscribe!', array('class' => 'btn btn-success project-delete center-block')) !!}
+                {!! Form::close() !!}
+            </div>
+            @else
+             <div class="form-group">
+                {!! Form::open(array('class' => 'form-inline', 'route' => array('unsubscribe', $project->id))) !!}
+                {!! Form::submit('Unsubscribe', array('class' => 'btn btn-default project-delete center-block')) !!}
+                {!! Form::close() !!}
+            </div>
+            @endif
+
+            @if(Auth::user()->hasRole('admin'))
+            <div class="form-group">
+                {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('projects.destroy', $project->id))) !!}
+                {!! Form::submit('Delete Project', array('class' => 'btn btn-danger')) !!}
+                {!! Form::close() !!}
+            </div>
+            @endif
+
+        </div>
+            <div class="col-md-9">
                 <table id="status-table" class="display table table-striped" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -63,12 +97,6 @@
         </div>
     </div>
     @endif
-        <div class="col-md-2 col-md-offset-1">
-            {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('projects.destroy', $project->id))) !!}
-            {!! Form::submit('Delete Project', array('class' => 'btn btn-danger')) !!}
-            {!! Form::close() !!}
-        </div>
-
     </div>
 </div>
 @stop

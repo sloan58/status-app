@@ -57,6 +57,11 @@ class PermissionsTableSeeder extends Seeder
                 'display_name' => 'Manage roles',
                 'is_admin' => 1
             ),
+            array( // 10
+                'name' => 'manage_reports',
+                'display_name' => 'Manage reports',
+                'is_admin' => 1
+            ),
         );
 
 

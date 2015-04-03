@@ -27,7 +27,13 @@
     <div class="row">
      @if($projects->count())
         <div class="col-md-4 col-md-offset-4 vcenter">
-            <div class="text-center lato-headers">Projects Listing</div>
+            <div class="text-center lato-headers">
+            @if (Request::is('projects/mine'))
+                My Projects Listing
+            @else
+                All Projects Listing
+            @endif
+            </div>
         </div>
     </div>
 
@@ -39,7 +45,7 @@
                                 <thead>
                                     <tr>
                                         <th>Project Name</th>
-                                        <th>Last Update</th>
+                                        <th>Last Updated By</th>
                                         <th>Created</th>
                                         <th>Updated</th>
                                     </tr>

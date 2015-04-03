@@ -120,4 +120,35 @@ class ProjectsController extends Controller {
 
     }
 
+    /**
+     * Subscribe user to project
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function subscribe($id)
+    {
+
+        User::find(\Auth::user()->id)->subscriptions()->attach($id);
+
+        Flash::success('You are now subscribed to this project!');
+        return redirect()->route('projects.show', [ $id ]);
+
+    }
+
+    /**
+     * Unsubscribe user from project
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function unsubscribe($id)
+    {
+
+        User::find(\Auth::user()->id)->subscriptions()->detach($id);
+
+        Flash::success('You are now unsubscribed to this project.');
+        return redirect()->route('projects.show', [ $id ]);
+
+    }
 }

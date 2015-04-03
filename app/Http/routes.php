@@ -20,7 +20,18 @@ Route::model('projects', 'App\Project');
 /*
  *  Project Routes
  */
-Route::get('projects/mine', 'ProjectsController@mine');
+Route::post('projects/{id}/subscribe',[
+    'as' => 'subscribe',
+    'uses' => 'ProjectsController@subscribe'
+]);
+Route::post('projects/{id}/unsubscribe',[
+    'as' => 'unsubscribe',
+    'uses' => 'ProjectsController@unsubscribe'
+]);
+Route::get('projects/mine', [
+    'as' => 'projects.mine',
+    'uses' => 'ProjectsController@mine'
+]);
 Route::resource('projects', 'ProjectsController');
 
 /*

@@ -85,4 +85,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\Status');
     }
 
+    /*
+     * A user can subscribe to updates for many projects
+     */
+    public function subscriptions()
+    {
+        return $this->belongsToMany('App\Project');
+    }
+
 }
