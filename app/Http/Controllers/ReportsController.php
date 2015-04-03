@@ -104,7 +104,7 @@ class ReportsController extends Controller {
         // Saving the document as OOXML file...
         $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 
-        $fileNameAndPath = 'tmp/IED-NIPT_Tracker' . Carbon::now()->toDateString() . '.docx';
+        $fileNameAndPath = '/tmp/IED-NIPT_Tracker' . Carbon::now()->toDateString() . '.docx';
 
         $objWriter->save($fileNameAndPath);
 
