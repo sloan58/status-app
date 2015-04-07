@@ -605,7 +605,7 @@ h4{
                                                         <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
 
                                                             <h1>Please find attached the requested IED NIPT Status Tracker report.</h1>
-                                                            <a href="http://usc-todo.laireight.com" class="mc-template-link">Update this link</a>
+                                                            {{--<a href="http://usc-todo.laireight.com" class="mc-template-link">This is a dummy link!</a>--}}
                                                         </td>
                                                     </tr>
                                                     </tbody></table>
