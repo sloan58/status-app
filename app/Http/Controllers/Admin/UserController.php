@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
+use App\Project;
 use App\User;
 use App\AssignedRoles;
 use App\Role;
@@ -29,10 +30,14 @@ class UserController extends AdminController {
      * @return Response
      */
     public function getCreate() {
+
         $roles = Role::all();
-        // Selected groups
-        $selectedRoles = array();
-        return view('admin.users.create_edit', compact('roles', 'selectedRoles'));
+        $selectedRoles = [];
+
+        $projects = Project::all();
+        $assignedProjects = [];
+
+        return view('admin.users.create_edit', compact('roles', 'selectedRoles','projects','assignedProjects'));
     }
 
     /**

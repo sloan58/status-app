@@ -112,6 +112,25 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-md-12">
+                <br>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="projects">{{
+                        Lang::get('admin/users.projects') }}</label>
+                    <div class="col-md-6">
+                        <select name="projects[]" id="projects" multiple style="width: 100%;">
+                            @foreach ($projects as $project)
+                            <option value="{{{ $project->id }}}" {{{ ( array_search($project->id,
+                                $assignedProjects) !== false && array_search($project->id,
+                                $assignedProjects) >= 0 ? ' selected="selected"' : '') }}}>{{{
+                                $project->name }}}</option> @endforeach
+                        </select> <span class="help-block"> {{
+                            Lang::get('admin/users.projects_info') }} </span>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</div>
 	<div class="form-group">
@@ -139,6 +158,7 @@
 <script type="text/javascript">
 	$(function() {
 		$("#roles").select2()
+		$("#projects").select2()
 	});
 </script>
 @stop

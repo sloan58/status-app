@@ -12,6 +12,7 @@ return [
     'yes' => 'Yes',
     'no' => 'No',
     'roles' => 'Roles',
-    'roles_info' => 'Adding the role to user, be assigned all privileges for a given role.'
-
+    'roles_info' => 'Adding the role to user, be assigned all privileges for a given role.',
+    'projects' => 'Projects',
+    'projects_info' => 'Assign projects to the user.'
 ];
