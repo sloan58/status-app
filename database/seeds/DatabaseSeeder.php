@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder {
         'project_user',
         'statuses',
         'language',
+        'permission',
+        'role',
+        'permission_role'
     ];
 
     /**
@@ -25,6 +28,8 @@ class DatabaseSeeder extends Seeder {
         'ProjectUserTableSeeder',
         'StatusTableSeeder',
         'LanguagesTableSeeder',
+        'RolesTableSeeder',
+        'PermissionsTableSeeder',
 
     ];
 
