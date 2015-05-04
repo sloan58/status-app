@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder {
         'project_user',
         'statuses',
         'language',
-        'permission',
+        'permissions',
         'role',
         'permission_role'
     ];
